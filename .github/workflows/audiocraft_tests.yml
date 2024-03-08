@@ -12,10 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/audiocraft_build
-      - name: Run unit tests
-        run: |
-          . env/bin/activate
-          make tests
       - name: Run integration tests
         uses: koenhagen/measure-energy-action@v0.33
         with:

@@ -17,6 +17,10 @@ jobs:
           . env/bin/activate
           make tests
       - name: Run integration tests
-        run: |
-          . env/bin/activate
-          make tests_integ
+        uses: koenhagen/measure-energy-action@v0.33
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            . env/bin/activate
+            make tests_integ
+          count: 1
